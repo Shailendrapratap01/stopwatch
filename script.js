@@ -21,6 +21,11 @@ startBtn.addEventListener("click", () => {
     lapStartTime = startTime;
 });
 
+function startTimer() {
+    elapsedTime = Date.now() - startTime;
+    timer.innerText = toTimeFormate(elapsedTime);
+}
+
 resetBtn.addEventListener("click", () => {
     clearInterval(timeInterval);
     startTime=0;
@@ -35,11 +40,6 @@ resetBtn.addEventListener("click", () => {
     lapCnt=0;
 })  
 
-function startTimer() {
-    elapsedTime = Date.now() - startTime;
-    timer.innerText = toTimeFormate(elapsedTime);
-}
-
 stopBtn.addEventListener("click", () => {
     clearInterval(timeInterval);
     resetBtn.style.display = "block";
@@ -50,19 +50,32 @@ stopBtn.addEventListener("click", () => {
 
 const toTimeFormate = (elapsedTime) => {
     const date = new Date(elapsedTime);
+
+    let yr = date.getFullYear()-1970;
+    let mon = date.getMonth();
     let day = date.getDate()-1;
     let hr = date.getUTCHours();
     let min = date.getUTCMonth();
     let sec = date.getUTCSeconds();
     let millisec = Math.floor(date.getMilliseconds() / 10);
 
+    let exactYear = yr.toString().padStart(2, "0");
+    let exactMonth = mon.toString().padStart(2, "0");
     let exactDay = day.toString().padStart(2, "0");
     let exactHour = hr.toString().padStart(2, "0");
     let exactMin = min.toString().padStart(2, "0");
     let exactSec = sec.toString().padStart(2, "0");
     let exactmilli = millisec.toString().padStart(2, "0");
 
-    return `${exactDay}:${exactHour}:${exactMin}:${exactSec}:${exactmilli}`;
+    let year = yr > 1 ? "years": "year";
+    let month = mon > 1 ? "months": "month";
+    let days = day > 1 ? "days": "day";
+    let hour = hr > 1 ? "hours": "hour";
+    let minute = min > 1 ? "minutes": "minute";
+    let second = sec > 1 ? "seconds": "second";
+    let millisecond = millisec > 1 ? "milliseconds": "millisecond";
+
+    return `${exactYear}${year} ${exactMonth}${month} ${exactDay}${days} ${exactHour}${hour} ${exactMin}${minute} ${exactSec}${second} ${exactmilli}${millisecond} `;
 };
 
 lapBtn.addEventListener('click', ()=>{
