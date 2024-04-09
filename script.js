@@ -51,31 +51,31 @@ stopBtn.addEventListener("click", () => {
 const toTimeFormate = (elapsedTime) => {
     const date = new Date(elapsedTime);
 
-    let yr = date.getFullYear()-1970;
-    let mon = date.getMonth();
+    let year = date.getFullYear() - 1970;
+    let month = date.getMonth();
     let day = date.getDate()-1;
-    let hr = date.getUTCHours();
-    let min = date.getUTCMonth();
-    let sec = date.getUTCSeconds();
-    let millisec = Math.floor(date.getMilliseconds() / 10);
+    let hour = date.getUTCHours();
+    let minute = date.getUTCMonth();
+    let second = date.getUTCSeconds();
+    let millisecond = Math.floor(date.getMilliseconds() / 10);
 
-    let exactYear = yr.toString().padStart(2, "0");
-    let exactMonth = mon.toString().padStart(2, "0");
+    let exactYear = year.toString().padStart(2, "0");
+    let exactMonth = month.toString().padStart(2, "0");
     let exactDay = day.toString().padStart(2, "0");
-    let exactHour = hr.toString().padStart(2, "0");
-    let exactMin = min.toString().padStart(2, "0");
-    let exactSec = sec.toString().padStart(2, "0");
-    let exactmilli = millisec.toString().padStart(2, "0");
+    let exactHour = hour.toString().padStart(2, "0");
+    let exactMin = minute.toString().padStart(2, "0");
+    let exactSec = second.toString().padStart(2, "0");
+    let exactmilli = millisecond.toString().padStart(2, "0");
 
-    let year = yr > 1 ? "years": "year";
-    let month = mon > 1 ? "months": "month";
-    let days = day > 1 ? "days": "day";
-    let hour = hr > 1 ? "hours": "hour";
-    let minute = min > 1 ? "minutes": "minute";
-    let second = sec > 1 ? "seconds": "second";
-    let millisecond = millisec > 1 ? "milliseconds": "millisecond";
+    let yearString = year > 1 ? "years": "year";
+    let monthString = month > 1 ? "months": "month";
+    let dayString = day > 1 ? "days": "day";
+    let hourString = hour > 1 ? "hours": "hour";
+    let minuteString = minute > 1 ? "minutes": "minute";
+    let secondString = second > 1 ? "seconds": "second";
+    let millisecondString = millisecond > 1 ? "milliseconds": "millisecond";
 
-    return `${exactYear}${year} ${exactMonth}${month} ${exactDay}${days} ${exactHour}${hour} ${exactMin}${minute} ${exactSec}${second} ${exactmilli}${millisecond} `;
+    return `${exactYear}${yearString} ${exactMonth}${monthString} ${exactDay}${dayString} ${exactHour}${hourString} ${exactMin}${minuteString} ${exactSec}${secondString} ${exactmilli}${millisecondString} `;
 };
 
 lapBtn.addEventListener('click', ()=>{
