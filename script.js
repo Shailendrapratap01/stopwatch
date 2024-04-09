@@ -67,7 +67,6 @@ const toTimeFormate = (elapsedTime) => {
 
 lapBtn.addEventListener('click', ()=>{
     let lapTime = getLapTime();
-    console.log(lapTime)
     if(lapCnt===0){
         lapContainerHeading = document.createElement("div")
         const head1 = document.createElement("p")
@@ -105,8 +104,7 @@ lapBtn.addEventListener('click', ()=>{
     lapContainer.appendChild(lapDiv)
 })
 
-let totalLapElapsedTime = 0;
-//to get the lap time and totel lap time
+//to get the lap time
 const getLapTime = () => {
     const elapsedLapTime = Date.now() - lapStartTime;
     const lapTime = toTimeFormate(elapsedLapTime);
