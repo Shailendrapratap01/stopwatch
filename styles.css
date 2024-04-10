@@ -17,6 +17,7 @@ h2{
 }
 #timer{
     font-size: 1.5rem;
+    display: flex;
 }
 p{
     font-size: 1rem;
@@ -37,8 +38,9 @@ button{
     width: 100%;
     padding: 5px 20px;
 }
+
 #lap-container{
-    width: 70%;
+    width: 90%;
     background-color: rgb(250, 187, 109);
     margin: 50px auto;
     color: white;
@@ -140,7 +142,7 @@ button{
         border-radius: 2rem;
     }
     p{
-        font-size: 1.5rem;
+        font-size: 1.8rem;
     }
     h1{
         font-size: 3.5rem;
@@ -161,7 +163,7 @@ button{
         border-radius: .5rem;
     }
     #lap-container{
-        width: 70%;
+        width: 90%;
     }
     .lap-container-heading{
         padding: 10px 30px;
