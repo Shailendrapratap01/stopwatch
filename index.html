@@ -3,9 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Stop Watch</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
+    <div class="main-container">
+        <h1>STOPWATCH</h1>
+        <h2>VANILLA JAVASCRIPT STOPWATCH</h2>
+        <!-- <div id="timer">00:00:00:00:00:00:00</div> -->
+        <div id="timer">
+            <div id="year">00</div> <span >&nbsp;:&nbsp;</span>
+            <div id="month">00</div> <span >&nbsp;:&nbsp;</span>
+            <div id="day">00</div> <span >&nbsp;:&nbsp;</span>
+            <div id="hour">00</div> <span >&nbsp;:&nbsp;</span>
+            <div id="minute">00</div> <span >&nbsp;:&nbsp;</span>
+            <div id="second">00</div> <span >&nbsp;:&nbsp;</span>
+            <div id="millisecond" style="width: 40px;">00</div>
+        </div>
+        <div class="btn-container">
+            <button id="start-btn">START</button>
+            <button id="stop-btn">STOP</button>
+            <button id="reset-btn">RESET</button>
+            <button id="lap-btn">LAP</button>
+        </div>
+    </div>
+    <div id="lap-container">
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
