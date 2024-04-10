@@ -30,7 +30,7 @@ resetBtn.addEventListener("click", () => {
     clearInterval(timeInterval);
     startTime=0;
     elapsedTime=0;
-    timer.innerText = "00:00:00:00:00"
+    timer.innerText = "00:00:00:00:00:00:00"
     stopBtn.style.display = "none";
     lapBtn.style.display = "none";
     resetBtn.style.display = "none";
@@ -49,15 +49,21 @@ stopBtn.addEventListener("click", () => {
 })  
 
 const toTimeFormate = (elapsedTime) => {
-    const date = new Date(elapsedTime);
 
-    let year = date.getFullYear() - 1970;
-    let month = date.getMonth();
-    let day = date.getDate()-1;
-    let hour = date.getUTCHours();
-    let minute = date.getUTCMonth();
-    let second = date.getUTCSeconds();
-    let millisecond = Math.floor(date.getMilliseconds() / 10);
+    let totalYears = elapsedTime / 31104000000;
+    let year = Math.floor(totalYears);
+    let totalMonths = (totalYears - year) * 12;
+    let month = Math.floor(totalMonths % 12);
+    let totalDays = (totalMonths - month) * 30;
+    let day = Math.floor(totalDays % 30);
+    let totalHours = (totalDays - day) * 24;
+    let hour = Math.floor(totalHours % 24);
+    let totalMins = (totalHours - hour) * 60;
+    let minute = Math.floor(totalMins % 60);
+    let totalSec = (totalMins - minute) * 60;
+    let second = Math.floor(totalSec % 60);
+    let totalMilliiSeconds = (totalSec - second) * 100;
+    let millisecond = Math.floor(totalMilliiSeconds % 1000);
 
     let exactYear = year.toString().padStart(2, "0");
     let exactMonth = month.toString().padStart(2, "0");
